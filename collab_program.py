@@ -9,3 +9,5 @@ On the first draw, each player guesses the color.
 Next, they guess if the drawn card will be higher or lower than the card they have.
 After that, they guess if the upcoming card in in between or outside the cards they have.
 Lastly, they guess the suit of the fourth card drawn"""
+
+#edit - ranjth 
