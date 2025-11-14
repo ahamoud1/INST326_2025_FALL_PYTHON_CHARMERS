@@ -1,3 +1,4 @@
+
 def initial_guess_phase(deck):
     """Play the initial guess phase of the Ride the Bus game using a given deck.
     
