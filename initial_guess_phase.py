@@ -1,14 +1,3 @@
-    # get shuffled deck of card objects
-    # draw first card
-    # guess its color 
-    # draw second card
-    # guess if its higher or lower than first card
-    # draw third card
-    # guess if its in between or outisde the first and second card
-    # draw fourth card
-    # guess its suite
-    # return drawn card objects
-
 def initial_guess_phase(deck):
     """Play the initial guess phase of the Ride the Bus game using a given deck.
     
@@ -63,3 +52,4 @@ def initial_guess_phase(deck):
 
     print("Your cards were:", first, second, third, fourth)
     return [first, second, third, fourth]
+
