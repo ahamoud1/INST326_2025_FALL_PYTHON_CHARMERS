@@ -15,12 +15,11 @@ deck = (("Ace", "Diamonds"), ("Ace", "Clubs"), ("Ace", "Hearts"), ("Ace", "Spade
 ("King", "Diamonds"), ("King", "Clubs"), ("King", "Hearts"), ("King", "Spades"))
 
 def ride_the_bus(players):
-    """ The losing player will be determined and 10 cards will be laid face down and flipped one by one.
+    """ The losing player will be determined and 10 cards will be flipped one by one.
     Number cards do nothing while face cards and aces add penalty points to the losing player's score.
 
     Args:
         players (dict(str: int)): The names of the players and their scores
-        cards (dict(str: str)): The different cards in regards to number and suit.
 
     Returns:
         player_points (int): The number of points that the losing player has after the Ride the Bus round.
