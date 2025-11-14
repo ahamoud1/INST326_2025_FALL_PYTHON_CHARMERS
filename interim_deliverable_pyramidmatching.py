@@ -1,13 +1,13 @@
 """ 
     Adela Wallis' Function - check_for_matches
     
-    writing a func that checks player's hand to see if they have
-    cards that match the cards in pyramid
+    Writing a func that checks player's hand to see if they have
+    cards that match the cards in pyramid.
     
 """
 
 def player_hand():
-    """player's hand of cards
+    """Fake function that creates the player's hand of cards.
     """
     
     hand = {
@@ -19,7 +19,7 @@ def player_hand():
     return hand
 
 def pyramid_formation():
-    """the cards that are in the pyramid
+    """Fake function that defines the cards that are in the pyramid.
     """
     
     pyramid = [
@@ -32,7 +32,20 @@ def pyramid_formation():
     return pyramid
 
 def check_for_matches(player_hand):
-
+    """ Checks players hand for matches (by rank) in the pyramid.
+    
+    Args:
+        player_hand (dict): Dictionary of player's card where 
+                            key is rank and value is color and suit
+                            
+    Returns:
+        rank (str): Rank of players' card, (2-10, Ace, King, Queen, Jack)
+        color (str): Color of players' card, (black or red)
+        suit (str): Suit of players' card (clubs, spades, diamonds, hearts)
+        
+    Side effects:
+        Prints when card is matches, then the player's card and card in pyramid
+    """ 
     pyramid = pyramid_formation()
 
     for row in pyramid:
