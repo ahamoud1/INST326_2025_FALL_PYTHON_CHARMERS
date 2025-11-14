@@ -14,7 +14,7 @@ deck = (("Ace", "Diamonds"), ("Ace", "Clubs"), ("Ace", "Hearts"), ("Ace", "Spade
 ("Queen", "Diamonds"), ("Queen", "Clubs"), ("Queen", "Hearts"), ("Queen", "Spades"),
 ("King", "Diamonds"), ("King", "Clubs"), ("King", "Hearts"), ("King", "Spades"))
 
-def ride_the_bus(players, deck):
+def ride_the_bus(players):
     """ The losing player will be determined and 10 cards will be laid face down and flipped one by one.
     Number cards do nothing while face cards and aces add penalty points to the losing player's score.
 
@@ -24,6 +24,9 @@ def ride_the_bus(players, deck):
 
     Returns:
         player_points (int): The number of points that the losing player has after the Ride the Bus round.
+        
+    Side effects:
+        prints the cards flipped by the losing player
     """
     losing_player = max(players, key=players.get)
     player_points = players[losing_player]
@@ -51,5 +54,5 @@ players = {
     "Player3": 31,
     "Player4": 14
 }
-new_score = ride_the_bus(players, deck)
+new_score = ride_the_bus(players)
 print(new_score)
