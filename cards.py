@@ -20,10 +20,6 @@ class Card:
             rank_name = str(self.rank)
         return rank_name + " of " + self.suit
 
-    def __repr__(self):
-        return str(self)
-
-
 def create_deck():
     suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
     ranks = list(range(2, 15))
