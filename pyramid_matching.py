@@ -8,5 +8,5 @@ def pyramid_round(deck, hand):
                 matches.append(card)
                 break
 
-    print("Number of matches: ", len(matches))
+    print("Number of matches in pyramid round: ", len(matches))
     return matches
