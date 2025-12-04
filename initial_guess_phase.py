@@ -16,7 +16,7 @@ def initial_guess_phase(deck):
     first = deck.pop()
     color_guess = input("Guess color (r or b): ")
     actual_color = "r" if first.suit in ["Hearts", "Diamonds"] else "b"
-    print("You were", "right!" if color_guess == actual_color else "wrong.")
+    print("Correct!" if color_guess == actual_color else "Wrong!")
     #score points
 
     #Guess higher or lower
