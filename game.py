@@ -20,7 +20,6 @@ def main():
         print("\nPlayer:", player.name)
         hand = initial_guess_phase(deck)
         player.set_hand(hand)
-
         matches = pyramid_round(deck, player.hand)
         player.set_matches(matches)
 
