@@ -44,7 +44,7 @@ def initial_guess_phase(deck):
 
     #Guess suit
     fourth = deck.pop()
-    suit_guess = input("Guess suit (Hearts/Diamonds/Clubs/Spades): ")
+    suit_guess = input("Guess suit: (Hearts/Diamonds/Clubs/Spades): ")
     if suit_guess == fourth.suit:
         print("Correct!\n")
         #score points
