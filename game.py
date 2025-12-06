@@ -1,33 +1,33 @@
 """runs game"""
-
+import argparse
 from cards import create_deck
 from initial_guess_phase import initial_guess_phase
 from pyramid_matching import pyramid_round
 from players import Player
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("players", nargs="+", help="players' names")
+    args = parser.parse_args()
+   
     deck = create_deck()
-
-    num_players = int(input("Enter number of players: "))
     players = []
 
-    for i in range(num_players):
-        name = input("Enter name for player " + str(i + 1) + ": ")
-        player = Player(name)
-        players.append(player)
-
-    for player in players:
-        print("\nPlayer:", player.name)
+    for name in args.players:
+        p = Player(name)
+        print("\nPlayer:", p.name)
         hand = initial_guess_phase(deck)
-        player.set_hand(hand)
-        matches = pyramid_round(deck, player.hand)
-        player.set_matches(matches)
+        p.set_hand(hand)
+        players.append(p)
+        
+    pyramid_round(deck, players)
 
     print("\nGame over. Summary:")
-    for player in players:
-        print(f"\nPlayer: {player.name}")
-        print(f"Hand: {player.hand}")
-        print(f"Matches: {player.matches}")
+    for p in players:
+        matches_text = "null" if not p.matches else p.matches
+        print(f"\nPlayer: {p.name}")
+        print(f"Hand: {p.hand}")
+        print(f"Matches: {matches_text}")
 
 if __name__ == "__main__":
     main()
