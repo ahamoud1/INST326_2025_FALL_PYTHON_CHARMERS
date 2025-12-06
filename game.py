@@ -23,7 +23,7 @@ def main():
         
     pyramid_round(deck, players)
     
-    print("\nGame over. Summary:")
+    print("\nSummary:")
     for p in players:
         print(f"\nPlayer: {p.name}")
         print(f"Hand: {p.hand}")
