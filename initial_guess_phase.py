@@ -1,6 +1,7 @@
 def play_guess_round(deck):
     all_correct = True
 
+    # Guess Color
     first = deck.pop()
     color_guess = input("Guess color (r or b): ")
     actual_color = "r" if first.suit in ["Hearts", "Diamonds"] else "b"
@@ -10,6 +11,7 @@ def play_guess_round(deck):
         print("Wrong!\n")
         all_correct = False
 
+    #Guess higher or lower
     second = deck.pop()
     hilo_guess = input("Higher or lower than first? (h/l): ")
     if (first.rank > second.rank and hilo_guess == "l") or \
@@ -19,6 +21,7 @@ def play_guess_round(deck):
         print("Wrong!\n")
         all_correct = False
 
+    #Guess indide or outside
     third = deck.pop()
     io_guess = input("Inside or outside the first two? (i/o): ")
     low = min(first.rank, second.rank)
@@ -31,6 +34,7 @@ def play_guess_round(deck):
         print("Wrong!\n")
         all_correct = False
 
+    # Guess Suit
     fourth = deck.pop()
     suit_guess = input("Guess suit: (Hearts/Diamonds/Clubs/Spades): ")
     if suit_guess == fourth.suit:

@@ -4,8 +4,7 @@ from cards import create_deck
 from initial_guess_phase import initial_guess_phase
 from pyramid_matching import pyramid_round
 from players import Player
-from riding_the_bus import ride_the_bus
-import riding_the_bus
+from riding_the_bus import ride_the_bus_phase
 
 def main():
     parser = argparse.ArgumentParser()
