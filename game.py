@@ -17,7 +17,7 @@ def main():
     for name in args.players:
         p = Player(name)
         print("\nPlayer:", p.name)
-        hand = guesses(deck)
+        hand, all_correct = guesses(deck)
         p.set_hand(hand)
         players.append(p)
         
