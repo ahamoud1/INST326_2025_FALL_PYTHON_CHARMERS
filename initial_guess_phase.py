@@ -1,4 +1,4 @@
-def play_guess_round(deck):
+def initial_guess_phase(deck):
     all_correct = True
 
     # Guess Color

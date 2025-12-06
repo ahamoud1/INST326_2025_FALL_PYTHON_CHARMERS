@@ -1,10 +1,10 @@
 """runs game"""
 import argparse
 from cards import create_deck
-from initial_guess_phase import initial_guess_phase
+from initial_guess_phase import guesses
 from pyramid_matching import pyramid_round
 from players import Player
-from riding_the_bus import ride_the_bus_phase
+from riding_the_bus import ride_the_bus
 
 def main():
     parser = argparse.ArgumentParser()
@@ -17,7 +17,7 @@ def main():
     for name in args.players:
         p = Player(name)
         print("\nPlayer:", p.name)
-        hand = initial_guess_phase(deck)
+        hand = guesses(deck)
         p.set_hand(hand)
         players.append(p)
         
@@ -29,7 +29,7 @@ def main():
         print(f"Hand: {p.hand}")
         print(f"Matches: {p.matches}")
         
-    riding_the_bus(deck,players)
+    ride_the_bus(deck,players)
 
 if __name__ == "__main__":
     main()

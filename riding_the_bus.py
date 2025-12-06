@@ -1,6 +1,6 @@
-from initial_guess_phase import initial_guess_phase
+from initial_guess_phase import guesses
 
-def ride_the_bus_phase(deck, players):
+def ride_the_bus(deck, players):
     bus_player = max(players, key=lambda p: len(p.matches))
     print(f"\n{bus_player.name} is riding the bus")
 
@@ -8,7 +8,7 @@ def ride_the_bus_phase(deck, players):
 
     while not finished and len(deck) >= 4:
         print("\nNew attempt: ")
-        cards, all_correct = initial_guess_phase(deck)
+        cards, all_correct = guesses(deck)
 
         if all_correct:
             finished = True
