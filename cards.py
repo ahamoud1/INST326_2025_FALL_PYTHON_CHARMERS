@@ -19,6 +19,10 @@ class Card:
         else:
             rank_name = str(self.rank)
         return rank_name + " of " + self.suit
+    
+    def __repr__(self):
+        return self.__str__()
+
 
 def create_deck():
     suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
