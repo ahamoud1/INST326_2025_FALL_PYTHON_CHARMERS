@@ -4,6 +4,8 @@ from cards import create_deck
 from initial_guess_phase import initial_guess_phase
 from pyramid_matching import pyramid_round
 from players import Player
+from riding_the_bus import ride_the_bus
+import riding_the_bus
 
 def main():
     parser = argparse.ArgumentParser()
@@ -21,13 +23,14 @@ def main():
         players.append(p)
         
     pyramid_round(deck, players)
-
+    
     print("\nGame over. Summary:")
     for p in players:
-        matches_text = "null" if not p.matches else p.matches
         print(f"\nPlayer: {p.name}")
         print(f"Hand: {p.hand}")
-        print(f"Matches: {matches_text}")
+        print(f"Matches: {p.matches}")
+        
+    riding_the_bus(deck,players)
 
 if __name__ == "__main__":
     main()
