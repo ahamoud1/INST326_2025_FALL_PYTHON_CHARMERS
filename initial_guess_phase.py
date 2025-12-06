@@ -51,6 +51,5 @@ def initial_guess_phase(deck):
     else:
         print("Wrong!\n")
 
-    print(f"Your cards were:\n{first}\n{second}\n{third}\n{fourth}\n")
     return [first, second, third, fourth]
 
