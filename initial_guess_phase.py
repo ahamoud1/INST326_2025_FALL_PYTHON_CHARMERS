@@ -1,4 +1,4 @@
-def initial_guess_phase(deck):
+def guesses(deck):
     all_correct = True
 
     # Guess Color
