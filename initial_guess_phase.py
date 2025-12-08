@@ -54,11 +54,11 @@ def guesses(deck):
 
     # Guess Suit
     fourth = deck.pop()
-    suit_guess = input("Guess suit: (Hearts/Diamonds/Clubs/Spades): ")
-    valid_suit = ["Hearts", "Diamonds", "Clubs", "Spades"]
+    suit_guess = input("Guess suit: (Hearts/Diamonds/Clubs/Spades): ").strip().lower()
+    valid_suit = ["hearts", "diamonds", "clubs", "spades"]
     
-    while suit_guess not in [s.lower() for s in valid_suit]:
-        print("Invalid input! Enter the full suit name: Hearts, Diamonds, Clubs, or Spades")
+    while suit_guess not in valid_suit:
+        print("Invalid input! Enter Hearts, Diamonds, Clubs, or Spades")
         suit_guess = input("Guess suit: (Hearts/Diamonds/Clubs/Spades): ").strip().lower()
     if suit_guess == fourth.suit.lower():
         print("Correct!\n")
