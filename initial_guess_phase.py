@@ -12,9 +12,10 @@ def guesses(deck):
     actual_color = "r" if first.suit in ["Hearts", "Diamonds"] else "b"
     if color_guess == actual_color:
         print("Correct!\n")
+        score += 1
+
     else:
         print("Wrong! You gained a point.\n")
-        score += 1
         all_correct = False
 
     #Guess higher or lower
@@ -28,9 +29,10 @@ def guesses(deck):
     if (first.rank > second.rank and hilo_guess == "l") or \
        (first.rank < second.rank and hilo_guess == "h"):
         print("Correct!\n")
+        score += 1
+
     else:
         print("Wrong! You gained a point.\n")
-        score += 1
         all_correct = False
 
     #Guess inside or outside
@@ -47,9 +49,9 @@ def guesses(deck):
     outside = third.rank < low or third.rank > high
     if (inside and io_guess == "i") or (outside and io_guess == "o"):
         print("Correct!\n")
+        score += 1
     else:
         print("Wrong! You gained a point.\n")
-        score += 1
         all_correct = False
 
     # Guess Suit
@@ -62,9 +64,9 @@ def guesses(deck):
         suit_guess = input("Guess suit: (Hearts/Diamonds/Clubs/Spades): ").strip().lower()
     if suit_guess == fourth.suit.lower():
         print("Correct!\n")
+        score += 1
     else:
         print("Wrong! You gained a point.\n")
-        score += 1
         all_correct = False
 
     return [first, second, third, fourth], all_correct, score
