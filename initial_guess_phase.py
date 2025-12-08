@@ -1,5 +1,4 @@
 def guesses(deck):
-    all_correct = True
     score = 0
 
     # Guess Color
@@ -16,7 +15,6 @@ def guesses(deck):
 
     else:
         print("Wrong! You gained a point.\n")
-        all_correct = False
 
     #Guess higher or lower
     second = deck.pop()
@@ -33,7 +31,6 @@ def guesses(deck):
 
     else:
         print("Wrong! You gained a point.\n")
-        all_correct = False
 
     #Guess inside or outside
     third = deck.pop()
@@ -52,7 +49,6 @@ def guesses(deck):
         score += 1
     else:
         print("Wrong! You gained a point.\n")
-        all_correct = False
 
     # Guess Suit
     fourth = deck.pop()
@@ -67,7 +63,6 @@ def guesses(deck):
         score += 1
     else:
         print("Wrong! You gained a point.\n")
-        all_correct = False
 
-    return [first, second, third, fourth], all_correct, score
+    return [first, second, third, fourth], score
 
