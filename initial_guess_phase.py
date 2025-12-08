@@ -57,7 +57,7 @@ def guesses(deck):
     suit_guess = input("Guess suit: (Hearts/Diamonds/Clubs/Spades): ")
     valid_suit = ["Hearts", "Diamonds", "Clubs", "Spades"]
     
-    while suit_guess not in [s.lower() for s in valid_suits]:
+    while suit_guess not in [s.lower() for s in valid_suit]:
         print("Invalid input! Enter the full suit name: Hearts, Diamonds, Clubs, or Spades")
         suit_guess = input("Guess suit: (Hearts/Diamonds/Clubs/Spades): ").strip().lower()
     if suit_guess == fourth.suit.lower():
