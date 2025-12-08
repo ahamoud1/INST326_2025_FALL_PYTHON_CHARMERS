@@ -16,7 +16,8 @@ def pyramid_round(deck, players):
                         p.add_score(points)
                         break  
         row += 1
-    
+
+def print_pyramid_round(players):  
     for p in players:
         print(f"\nPlayer: {p.name}") 
 
@@ -32,7 +33,7 @@ def pyramid_round(deck, players):
                     row_matches.append(card)
 
             if len(row_matches) > 0:
-                row_points = len(row_matches) * r
+                row_points = len(row_matches) * (5 - r)
                 total_points += row_points
                 print(f"Row {r} matches:", [str(c) for c in row_matches], row_points, "points")
 
