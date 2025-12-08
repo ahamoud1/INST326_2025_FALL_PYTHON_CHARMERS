@@ -14,25 +14,41 @@ def main():
     deck = create_deck()
     players = []
 
+    print(f"\n ----- INITIAL GUESS PHASE -----")
+    
     for name in args.players:
         p = Player(name)
         print("\nPlayer:", p.name)
-        hand, all_correct = guesses(deck)
+        hand, all_correct, score = guesses(deck)
         p.set_hand(hand)
+        p.add_score(score)
         players.append(p)
+        print(f"{p.name}'s score: {p.score}")
         
+    print(f"\n -----PYRAMID ROUND-----")
+    
     pyramid_round(deck, players)
     
-    print("\nSummary:")
+    row_sizes = [4, 3, 2, 1]
+    
     for p in players:
         print(f"\nPlayer: {p.name}")
         print(f"Hand: {p.hand}")
-        print(f"Matches: {p.matches}")
+        print(f"Matches: {[str(card) for card, r in p.matches]}")
+        
+        for r in range(1,5):
+            row_matches = [card for card, rr in p.matches if rr==r]
+            if row_matches:
+                print(f"Row {r} matches: {[str(c) for c in row_matches]} "
+                      f"{len(row_matches) * r} points")
+                
         print(f"Score: {p.score}")
         
+    print(f"\n -----RIDING THE BUS-----")
+    
     ride_the_bus(deck,players)
     
-    print("\nFinal Scores:")
+    print(f"\n-----FINAL SCORES-----\n")
     for p in players:
         print(f"{p.name}: {p.score}")
 

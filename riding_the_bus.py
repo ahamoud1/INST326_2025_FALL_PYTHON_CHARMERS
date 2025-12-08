@@ -8,11 +8,12 @@ def ride_the_bus(deck, players):
 
     while not finished and len(deck) >= 4:
         print("\nNew attempt: ")
-        cards, all_correct = guesses(deck)
-
+        cards, all_correct, score = guesses(deck)
+        bus_player.add_score(score)
+        
         if all_correct:
             finished = True
         else:
             print("Restart!\n")
 
-    print(f"{bus_player.name} finished Riding the Bus!")
+    print(f"\n{bus_player.name} finished Riding the Bus!")

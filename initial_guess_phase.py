@@ -1,5 +1,6 @@
 def guesses(deck):
     all_correct = True
+    score = 0
 
     # Guess Color
     first = deck.pop()
@@ -8,7 +9,8 @@ def guesses(deck):
     if color_guess == actual_color:
         print("Correct!\n")
     else:
-        print("Wrong!\n")
+        print("Wrong! You gained a point.\n")
+        score += 1
         all_correct = False
 
     #Guess higher or lower
@@ -18,10 +20,11 @@ def guesses(deck):
        (first.rank < second.rank and hilo_guess == "h"):
         print("Correct!\n")
     else:
-        print("Wrong!\n")
+        print("Wrong! You gained a point.\n")
+        score += 1
         all_correct = False
 
-    #Guess indide or outside
+    #Guess inside or outside
     third = deck.pop()
     io_guess = input("Inside or outside the first two? (i/o): ")
     low = min(first.rank, second.rank)
@@ -31,7 +34,8 @@ def guesses(deck):
     if (inside and io_guess == "i") or (outside and io_guess == "o"):
         print("Correct!\n")
     else:
-        print("Wrong!\n")
+        print("Wrong! You gained a point.\n")
+        score += 1
         all_correct = False
 
     # Guess Suit
@@ -40,8 +44,9 @@ def guesses(deck):
     if suit_guess == fourth.suit:
         print("Correct!\n")
     else:
-        print("Wrong!\n")
+        print("Wrong! You gained a point.\n")
+        score += 1
         all_correct = False
 
-    return [first, second, third, fourth], all_correct
+    return [first, second, third, fourth], all_correct, score
 
