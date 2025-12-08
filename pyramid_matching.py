@@ -18,7 +18,7 @@ def pyramid_round(deck, players):
         row += 1
     
     for p in players:
-        print(f"\n{p.name}") 
+        print(f"\nPlayer: {p.name}") 
 
         print("Matches:", [str(c) for c, r in p.matches])
 

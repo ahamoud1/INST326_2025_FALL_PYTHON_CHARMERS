@@ -26,7 +26,7 @@ def main():
         print(f"{p.name}'s score: {p.score}")
         print(f"{p.name}'s hand: {p.hand}")
 
-    print(f"\n -----PYRAMID ROUND-----")
+    print(f"\n -----PYRAMID ROUND RESULTS-----")
     
     pyramid_round(deck, players)
         
