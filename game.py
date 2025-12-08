@@ -24,23 +24,11 @@ def main():
         p.add_score(score)
         players.append(p)
         print(f"{p.name}'s score: {p.score}")
-        
+        print(f"{p.name}'s hand: {p.hand}")
+
     print(f"\n -----PYRAMID ROUND-----")
     
     pyramid_round(deck, players)
-        
-    for p in players:
-        print(f"\nPlayer: {p.name}")
-        print(f"Hand: {p.hand}")
-        print(f"Matches: {[str(card) for card, r in p.matches]}")
-        
-        for r in range(1,5):
-            row_matches = [card for card, rr in p.matches if rr==r]
-            if row_matches:
-                print(f"Row {r} matches: {[str(c) for c in row_matches]} "
-                      f"{len(row_matches) * r} points")
-                
-        print(f"Score: {p.score}")
         
     print(f"\n -----RIDING THE BUS-----")
     
