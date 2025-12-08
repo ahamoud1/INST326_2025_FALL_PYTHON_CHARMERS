@@ -44,7 +44,8 @@ def main():
         
     print(f"\n -----RIDING THE BUS-----")
     
-    ride_the_bus(deck,players)
+    ride_the_bus_deck = create_deck()
+    ride_the_bus(ride_the_bus_deck, players)
     
     print(f"\n-----FINAL SCORES-----\n")
     for p in players:
