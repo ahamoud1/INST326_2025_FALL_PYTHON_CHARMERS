@@ -28,9 +28,7 @@ def main():
     print(f"\n -----PYRAMID ROUND-----")
     
     pyramid_round(deck, players)
-    
-    row_sizes = [4, 3, 2, 1]
-    
+        
     for p in players:
         print(f"\nPlayer: {p.name}")
         print(f"Hand: {p.hand}")

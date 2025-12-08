@@ -12,9 +12,6 @@ def pyramid_round(deck, players):
                 for h in p.hand:
                     if h.rank == card.rank:
                         p.matches.append((card, row))
-                        
                         p.add_score(row)
-                    
                         break  
-        
         row += 1
