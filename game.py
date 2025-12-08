@@ -28,8 +28,13 @@ def main():
         print(f"\nPlayer: {p.name}")
         print(f"Hand: {p.hand}")
         print(f"Matches: {p.matches}")
+        print(f"Score: {p.score}")
         
     ride_the_bus(deck,players)
+    
+    print("\nFinal Scores:")
+    for p in players:
+        print(f"{p.name}: {p.score}")
 
 if __name__ == "__main__":
     main()
