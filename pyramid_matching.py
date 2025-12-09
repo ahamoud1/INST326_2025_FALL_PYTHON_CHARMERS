@@ -22,7 +22,7 @@ def pyramid_round(deck, players):
         print("Flipped Cards:")
         for i, card in enumerate(row_cards, start=1):
             print(f" {i}. {card}")
-
+``
         points = row  
 
         for p in players:
