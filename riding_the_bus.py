@@ -1,4 +1,7 @@
 def ride_the_bus(deck, players):
+    """ Player with lowest points is given 3 chances to choose between 10 cards.
+    If the player gets a face card, they will gain points depending on the card given.
+    """
     bus_player = min(players, key=lambda p: p.score)
     print(f"\n{bus_player.name} is riding the bus")
 
@@ -6,12 +9,12 @@ def ride_the_bus(deck, players):
     for i in range(10):
         card = deck.pop()
         cards.append(card)
-
+        
     values = {
-        "Ace": 4,
-        "King": 3,
-        "Queen": 2,
-        "Jack": 1
+        14: 4,
+        13: 3,
+        12: 2,
+        1: 1
     }
 
     points = 0
@@ -23,10 +26,11 @@ def ride_the_bus(deck, players):
 
         card_index = card_num - 1
         chosen_card = cards[card_index]
+        print(f" {bus_player.name} has flipped {chosen_card}")
+        print(f"You gained {values.get((chosen_card.rank), 0)} points!")
 
-        points += values.get(chosen_card.rank, 0)
+        points += values.get((chosen_card.rank), 0)
 
     bus_player.add_score(points)
 
-    print(f"{bus_player.name} earned {points} points!")
-
+    print(f"{bus_player.name} earned a total of {points} points!")
