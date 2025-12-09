@@ -23,6 +23,9 @@ def main():
         p.set_hand(hand)
         p.add_score(score)
         players.append(p)
+
+        print(f"\n ----- INITIAL GUESS PHASE RESULT -----")
+
         print(f"{p.name}'s score: {p.score}")
         print(f"{p.name}'s hand: {p.hand}")
 
@@ -41,7 +44,7 @@ def main():
         print(f"{p.name}: {p.score}")
     
     winner = max(players, key=lambda p: p.score)
-    print(f"\n {winner.name} wins with {winner.score} points!")
+    print(f"\n{winner.name} wins with {winner.score} points!")
 
 if __name__ == "__main__":
     main()
