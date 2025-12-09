@@ -3,11 +3,7 @@ import sys
 from argparse import ArgumentParser
 from cards import create_deck
 from initial_guess_phase import guesses
-<<<<<<< HEAD
 from pyramid_matching import pyramid_round, print_pyramid_round
-=======
-from pyramid_matching import pyramid_round as pyramid_round
->>>>>>> f8fcf592154db331b539ac3427e3d81527df491a
 from players import Player
 from riding_the_bus import ride_the_bus
 
@@ -33,10 +29,7 @@ def main(players):
     print(f"\n -----PYRAMID ROUND-----")
     
     pyramid_round(deck, players)
-<<<<<<< HEAD
     print_pyramid_round(players)
-=======
->>>>>>> f8fcf592154db331b539ac3427e3d81527df491a
 
     print(f"\n -----RIDING THE BUS-----")
     
