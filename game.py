@@ -2,7 +2,7 @@
 import argparse
 from cards import create_deck
 from initial_guess_phase import guesses
-from pyramid_matching import print_pyramid_round as print_pyramid, pyramid_round as pyramid_round
+from pyramid_matching import pyramid_round as pyramid_round
 from players import Player
 from riding_the_bus import ride_the_bus
 
@@ -32,7 +32,7 @@ def main():
     print(f"\n -----PYRAMID ROUND RESULTS-----")
     
     pyramid_round(deck, players)
-    print_pyramid(players)
+    #print_pyramid(players)
 
     print(f"\n -----RIDING THE BUS-----")
     
