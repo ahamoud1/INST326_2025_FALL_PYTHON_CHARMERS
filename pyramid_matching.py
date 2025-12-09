@@ -1,3 +1,13 @@
+def choice(prompt, valid=("y", "n"), default="n"):
+    while True:
+        resp = input(prompt).strip().lower()
+        if resp == "":
+            return default
+        if resp in valid:
+            return resp
+        print(f"Invalid input! Enter one: {valid}.")
+
+
 def pyramid_round(deck, players):
     for p in players:
         p.matches = []
@@ -48,6 +58,7 @@ def pyramid_round(deck, players):
                 
                 print(f"{p.name} gained +{points} point(s)")
                 
+
                 if matching_cards:
                     choice = input(f"{p.name} do you want to match another card in this row? (y/n): ").strip().lower()
                     while choice not in ["y", "n"]:
@@ -57,4 +68,15 @@ def pyramid_round(deck, players):
         row += 1
 
     print("\n----- PYRAMID ROUND COMPLETE -----")
+
+def print_pyramid_round(players):
+    print("\n----- PYRAMID ROUND SUMMARY -----")
+    for p in players:
+        print(f"\n{p.name}'s matches:")
+        if not p.matches:
+            print("  No matches")
+        else:
+            for card, row in p.matches:
+                print(f"  Row {row}: {card}")
+        print(f"Score: {p.score}")    
 
