@@ -1,5 +1,4 @@
 def guesses(deck):
-    all_correct = True
     score = 0
 
     # Guess Color
@@ -11,12 +10,11 @@ def guesses(deck):
         color_guess = input("Guess color (r/b): ").strip().lower()
     actual_color = "r" if first.suit in ["Hearts", "Diamonds"] else "b"
     if color_guess == actual_color:
-        print("Correct!\n")
+        print("Correct! You gained a point!\n")
         score += 1
 
     else:
-        print("Wrong! You gained a point.\n")
-        all_correct = False
+        print("Wrong!\n")
 
     #Guess higher or lower
     second = deck.pop()
@@ -28,12 +26,11 @@ def guesses(deck):
     
     if (first.rank > second.rank and hilo_guess == "l") or \
        (first.rank < second.rank and hilo_guess == "h"):
-        print("Correct!\n")
+        print("Correct! You gained a point!\n")
         score += 1
 
     else:
-        print("Wrong! You gained a point.\n")
-        all_correct = False
+        print("Wrong!\n")
 
     #Guess inside or outside
     third = deck.pop()
@@ -48,11 +45,10 @@ def guesses(deck):
     inside = low < third.rank < high
     outside = third.rank < low or third.rank > high
     if (inside and io_guess == "i") or (outside and io_guess == "o"):
-        print("Correct!\n")
+        print("Correct! You gained a point!\n")
         score += 1
     else:
-        print("Wrong! You gained a point.\n")
-        all_correct = False
+        print("Wrong!\n")
 
     # Guess Suit
     fourth = deck.pop()
@@ -63,11 +59,10 @@ def guesses(deck):
         print("Invalid input! Enter Hearts, Diamonds, Clubs, or Spades")
         suit_guess = input("Guess suit: (Hearts/Diamonds/Clubs/Spades): ").strip().lower()
     if suit_guess == fourth.suit.lower():
-        print("Correct!\n")
+        print("Correct! You gained a point!\n")
         score += 1
     else:
-        print("Wrong! You gained a point.\n")
-        all_correct = False
+        print("Wrong!\n")
 
-    return [first, second, third, fourth], all_correct, score
+    return [first, second, third, fourth], score
 
