@@ -1,16 +1,17 @@
 """runs game"""
-import argparse
+import sys
+from argparse import ArgumentParser
 from cards import create_deck
 from initial_guess_phase import guesses
+<<<<<<< HEAD
 from pyramid_matching import pyramid_round, print_pyramid_round
+=======
+from pyramid_matching import pyramid_round as pyramid_round
+>>>>>>> f8fcf592154db331b539ac3427e3d81527df491a
 from players import Player
 from riding_the_bus import ride_the_bus
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("players", nargs="+", help="players' names")
-    args = parser.parse_args()
-   
+def main(players):   
     deck = create_deck()
     players = []
 
@@ -32,7 +33,10 @@ def main():
     print(f"\n -----PYRAMID ROUND-----")
     
     pyramid_round(deck, players)
+<<<<<<< HEAD
     print_pyramid_round(players)
+=======
+>>>>>>> f8fcf592154db331b539ac3427e3d81527df491a
 
     print(f"\n -----RIDING THE BUS-----")
     
@@ -46,5 +50,11 @@ def main():
     winner = max(players, key=lambda p: p.score)
     print(f"\n{winner.name} wins with {winner.score} points!")
 
+def parse_args(arglist):
+    parser = ArgumentParser()
+    parser.add_argument("players", nargs="+", help="players' names")
+    return parser.parse_args(arglist)
+    
 if __name__ == "__main__":
-    main()
+    args = parse_args(sys.argv[1:])
+    main(args.players)
