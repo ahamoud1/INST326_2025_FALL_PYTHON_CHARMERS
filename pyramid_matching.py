@@ -1,4 +1,22 @@
 def choice(prompt, valid=("y", "n"), default="n"):
+    """ Prompts user for valid input
+        
+    Parameters:
+        prompt(str): message shown by user
+        valid (tuple): valid respones
+        default (str): default value if user does not input
+        
+    Returns:
+        str: valid user input
+
+    Technique:
+        Optional Parameters 
+
+    Done by:
+        Adela Wallis
+    
+    """
+    
     while True:
         resp = input(prompt).strip().lower()
         if resp == "":
@@ -9,6 +27,24 @@ def choice(prompt, valid=("y", "n"), default="n"):
 
 
 def pyramid_round(deck, players):
+    """Pyramid Round of the game
+
+    Parameters:
+        deck (list): deck of cards where rows are taken from
+        players (list): list of player objects in round
+
+    Side effects:
+        updates player's hand and score
+        records matches made by each player
+        prints cards in each row and matched cards
+
+    Technique:
+        Sequence Unpacking
+
+    Done by:
+        Adela Wallis
+    """
+
     for p in players:
         p.matches = []
 
@@ -22,7 +58,7 @@ def pyramid_round(deck, players):
         print("Flipped Cards:")
         for i, card in enumerate(row_cards, start=1):
             print(f" {i}. {card}")
-``
+
         points = row  
 
         for p in players:
@@ -34,11 +70,10 @@ def pyramid_round(deck, players):
             
             print(f"\n{p.name} has matching card(s) in this row: {[str(c) for c in matching_cards]}")
             
-            choice = input("do you want to match a card in this row? (y/n): ").strip().lower()
-            while choice not in ["y", "n"]:
-                choice = input("Invalid input! Enter 'y' to match or 'n' to skip: ").strip().lower()
+            match = choice("do you want to match a card in this row? (y/n): ")
+
             
-            while choice == "y" and matching_cards:
+            while match == "y" and matching_cards:
                 print("Which card do you want to use to match?")
                 for i, c in enumerate(matching_cards, start=1):
                     print(f" {i}. {c}")
@@ -60,9 +95,7 @@ def pyramid_round(deck, players):
                 
 
                 if matching_cards:
-                    choice = input(f"{p.name} do you want to match another card in this row? (y/n): ").strip().lower()
-                    while choice not in ["y", "n"]:
-                        choice = input("Invalid input! Enter 'y' to match or 'n' to skip: ").strip().lower()
+                    match = choice(f"{p.name} do you want to match another card in this row? (y/n): ")
                 else:
                     break  
         row += 1
@@ -70,6 +103,18 @@ def pyramid_round(deck, players):
     print("\n----- PYRAMID ROUND COMPLETE -----")
 
 def print_pyramid_round(players):
+    """Prints player summary of the pyramid round 
+    
+    Parameters:
+        players (list): list of players
+
+    Side effects:
+        prints each player's matches and their current score
+
+    Done by:
+        Adela Wallis
+    """
+
     print("\n----- PYRAMID ROUND SUMMARY -----")
     for p in players:
         print(f"\n{p.name}'s matches:")
