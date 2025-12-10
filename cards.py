@@ -1,9 +1,26 @@
-"""Creates a card object and a deck of random cards!"""
-
 import random
 
 class Card:
+    """Creates a playing card
+    
+    Attributes:
+        rank (int): the number value of a card in a deck from
+                    2-14, with 11=Jack, 12=Queen, 13=King, 14=Ace
+        suit (str): the suit of the card in a deck 
+                    (Hearts, Diamonds, Clubs, Spades)
+    """
     def __init__(self, rank, suit):
+        """Initializes a card object
+        
+        Args:
+            rank (int): the number value of a card in a deck,
+                        see class documentation
+            suit (str): the suit of the card in a deck,
+                        see class documentation
+
+        Side effects:
+            Sets rank and suit attributes
+        """
         self.rank = rank
         self.suit = suit
 
@@ -25,6 +42,11 @@ class Card:
 
 
 def create_deck():
+    """Creates a shuffled deck of cards
+    
+    Returns:
+        randomized, shuffled list of card objects
+    """
     suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
     ranks = list(range(2, 15))
     deck = []

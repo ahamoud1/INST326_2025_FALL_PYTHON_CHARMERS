@@ -1,7 +1,7 @@
 def choice(prompt, valid=("y", "n"), default="n"):
     """ Prompts user for valid input
         
-    Parameters:
+    Args:
         prompt(str): message shown by user
         valid (tuple): valid respones
         default (str): default value if user does not input
@@ -29,7 +29,7 @@ def choice(prompt, valid=("y", "n"), default="n"):
 def pyramid_round(deck, players):
     """Pyramid Round of the game
 
-    Parameters:
+    Args:
         deck (list): deck of cards where rows are taken from
         players (list): list of player objects in round
 
@@ -105,7 +105,7 @@ def pyramid_round(deck, players):
 def print_pyramid_round(players):
     """Prints player summary of the pyramid round 
     
-    Parameters:
+    Args:
         players (list): list of players
 
     Side effects:
