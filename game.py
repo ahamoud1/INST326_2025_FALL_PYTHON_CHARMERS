@@ -23,7 +23,7 @@ def main(players):
 
     print(f"\n ----- INITIAL GUESS PHASE RESULT -----")
     for p in players:
-        print(f"{p.name}'s score: {p.score}")
+        print(f"\n{p.name}'s score: {p.score}")
         print(f"{p.name}'s hand: {p.hand}")   
 
     print(f"\n -----PYRAMID ROUND-----")
