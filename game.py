@@ -21,10 +21,10 @@ def main(players):
         p.add_score(score)
         players.append(p)
 
-        print(f"\n ----- INITIAL GUESS PHASE RESULT -----")
-
+    print(f"\n ----- INITIAL GUESS PHASE RESULT -----")
+    for p in players:
         print(f"{p.name}'s score: {p.score}")
-        print(f"{p.name}'s hand: {p.hand}")
+        print(f"{p.name}'s hand: {p.hand}")   
 
     print(f"\n -----PYRAMID ROUND-----")
     
