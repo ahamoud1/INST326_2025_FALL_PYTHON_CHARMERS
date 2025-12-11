@@ -1,4 +1,18 @@
 def guesses(deck):
+    """
+    Run the four initial guesses for a player.
+
+    Args:
+        deck (list[Card]): The deck to draw from. Four cards are removed.
+
+    Side Effects:
+        Prompts the user for input and prints results.
+
+    Returns:
+        tuple[list[Card], int]: The four drawn cards and the player's score.
+    
+    Done by: Ranjith Mahendran 
+    """
     score = 0
 
     # Guess Color
