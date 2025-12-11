@@ -8,6 +8,9 @@ class Card:
                     2-14, with 11=Jack, 12=Queen, 13=King, 14=Ace
         suit (str): the suit of the card in a deck 
                     (Hearts, Diamonds, Clubs, Spades)
+
+    Done by:
+        Ayah Hamouda
     """
     def __init__(self, rank, suit):
         """Initializes a card object
@@ -20,11 +23,25 @@ class Card:
 
         Side effects:
             Sets rank and suit attributes
+        
+        Techniques:
+            Attributes
+
+        Done by:
+            Ayah Hamouda
         """
         self.rank = rank
         self.suit = suit
 
     def __str__(self):
+        """Informal, user friendly string representation of card 
+        
+        Returns:
+            str: User friendly card
+
+        Done by:
+            Ayah Hamouda
+        """
         if self.rank == 11:
             rank_name = "Jack"
         elif self.rank == 12:
@@ -38,6 +55,14 @@ class Card:
         return rank_name + " of " + self.suit
     
     def __repr__(self):
+        """Formal, developer friendly string representation of card
+        
+        Returns:
+            str: Developer friendly card
+
+        Done by:
+            Ayah Hamouda
+        """
         return self.__str__()
 
 
@@ -46,6 +71,9 @@ def create_deck():
     
     Returns:
         randomized, shuffled list of card objects
+
+    Done by:
+        Ayah Hamouda
     """
     suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
     ranks = list(range(2, 15))
