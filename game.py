@@ -7,7 +7,7 @@ from pyramid_matching import pyramid_round, print_pyramid_round
 from players import Player
 from riding_the_bus import ride_the_bus
 
-def main(players):   
+def main():   
     deck = create_deck()
     players = []
 
@@ -50,4 +50,4 @@ def parse_args(arglist):
     
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
-    main(args.players)
+    main()
