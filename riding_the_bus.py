@@ -11,6 +11,12 @@ def bus_player(players):
     
     Side effects:
         Prints message if there are more than two losing players.
+        
+    Techniques:
+        List comprehension
+        
+    Done by:
+        Carlos Miranda
     """
     lowest_score = min(player.score for player in players)
     lowest_players = [player for player in players if player.score == lowest_score]
@@ -33,6 +39,11 @@ def ride_the_bus(deck, players):
         Requires input from the user to flip cards
         Prints messages to inform the player
         Modifies player's score.
+        
+    Techniques:
+        Iteration
+        
+    Done by: Carlos Miranda
     """
     
     bus_rider = bus_player(players)
