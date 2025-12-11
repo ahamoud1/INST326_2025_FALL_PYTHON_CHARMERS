@@ -7,7 +7,13 @@ from pyramid_matching import pyramid_round, print_pyramid_round
 from players import Player
 from riding_the_bus import ride_the_bus
 
-def main():   
+def main():
+    """
+    Side effect: Executes the game flow for the Ride the Bus game. 
+
+    Done by: Ranjith Mahendran
+
+    """
     deck = create_deck()
     players = []
 
@@ -44,6 +50,19 @@ def main():
     print(f"\n{winner.name} wins with {winner.score} points!")
 
 def parse_args(arglist):
+    """
+    Parse command line arguments for the game.
+
+    Parameters:
+    arglist : list[str]
+        The list of arguments passed from the command line.
+
+    Returns: 
+    argparse
+        An object containing parsed argument values, players: list of player names given by the user.
+    
+    Done by; Ranjith Mahendran
+    """
     parser = ArgumentParser()
     parser.add_argument("players", nargs="+", help="players' names")
     return parser.parse_args(arglist)
