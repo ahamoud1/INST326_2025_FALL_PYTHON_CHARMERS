@@ -9,6 +9,11 @@ from riding_the_bus import ride_the_bus
 
 def main():
     """
+    The game consists of:
+    1. Initial Guess Phase
+    2. Pyramid Matching Round
+    3. Riding the Bus
+    
     Side effect: Executes the game flow for the Ride the Bus game. 
 
     Done by: Ranjith Mahendran
