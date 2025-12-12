@@ -7,6 +7,9 @@ class Player:
         hand (list[Card]): The player's current hand of cards.
         matches (list[Card]): matched cards.
         score (int): The player's total score.
+
+    Done by: Ranjith Mahendran 
+
     """
     def __init__(self, name):
         """
@@ -14,6 +17,9 @@ class Player:
 
         Args:
             name (str): The player's name.
+    
+        Done by: Ranjith Mahendran 
+
         """
         self.name = name
         self.hand = []
@@ -26,6 +32,9 @@ class Player:
 
         Args:
             cards (list[Card]): The cards dealt to the player.
+
+        Done by: Ranjith Mahendran 
+
         """
         self.hand = cards
 
@@ -35,6 +44,9 @@ class Player:
 
         Args:
             points (int): The number of points to add.
+
+        Done by: Ranjith Mahendran 
+
         """
         self.score += points
         
@@ -44,5 +56,8 @@ class Player:
 
         Returns:
             str: The player's name.
+       
+        Done by: Ranjith Mahendran 
+
         """
         return self.name
